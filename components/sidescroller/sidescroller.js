@@ -13,23 +13,23 @@ class SideScroller {
     });
     this.scrollItems = document.querySelectorAll('side-scroll-section');
     document.addEventListener('scroll', () => {
-      // console.log ("scrolled");
-      // is going down
+      console.log(this.navAboveWindow());
+      // check to stop it from calling its self
       if (!this.stopScroll) {
-        if (this.navAtzero()) {
+        if (this.navAboveWindow()) {
           // case 1 going down
           if (this.isDown()) {
             // need to scroll side bar right ?
             if (this.isScrollLeftorRight() !== "right") {
-
               // set y scroll
               this.holdYScroll();
-            
-              // scroll to the left
+              // scroll to the right
               this.element.scrollLeft += 50;
-              console.log('going down');
+              // console.log('going down');
             }
-          } else if (!this.isDown()) {
+          }
+        } else if (!this.navAboveWindow()) {
+          if (!this.isDown()) {
             // going up
             // scroll left?
             if (this.isScrollLeftorRight() !== "left") {
@@ -46,13 +46,11 @@ class SideScroller {
     });
   }
 
-  navAtzero() {
+  navAboveWindow() {
     const nav = document.querySelector('.nav');
     const bound = nav.getBoundingClientRect();
     const top = bound.top;
-    if ((-40 < top) && (top < 40)) {
-      return true;
-    }
+    return top<0;
   }
 
   // hold at scroller
