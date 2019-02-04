@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
+    justify-content: space-around;
     padding: 15px;
     h2 {
         font-size: 2rem;
@@ -10,12 +12,22 @@
    
     .row {
         display: flex;
+        height: 50%;
+        
         .column {
+            color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: space-between;
             padding: 15px;
+            background: rgba(0,0,0,.5);
+            margin: 10px;
         }
+    }
+    p {
+        font-size: 1.6rem;
+
     }
     .icon-container {
         display: flex;
