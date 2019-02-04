@@ -8,7 +8,9 @@ class SideScroller {
     this.scrollNumber = 0;
     this.element.style.height = this.element.dataset.height;
     // set the width of all scroll items
-
+    this.scrollSection = document.querySelectorAll('.side-scroll-section').forEach((section) => {
+      return new ScrollSection(section);
+    });
     this.scrollItems = document.querySelectorAll('side-scroll-section');
     document.addEventListener('scroll', () => {
       // console.log ("scrolled");
@@ -48,7 +50,7 @@ class SideScroller {
     const nav = document.querySelector('.nav');
     const bound = nav.getBoundingClientRect();
     const top = bound.top;
-    if ((-20 < top) && (top < 20)) {
+    if ((-40 < top) && (top < 40)) {
       return true;
     }
   }
@@ -77,6 +79,13 @@ class SideScroller {
     } if ((this.element.scrollLeft + this.element.clientWidth) === this.element.scrollWidth) {
       return "right";
     }
+  }
+}
+
+class ScrollSection {
+  constructor(section) {
+    this.section = section;
+    this.section.style.width = this.section.dataset.width;
   }
 }
 // find side scroller and make a new object
