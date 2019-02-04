@@ -1,11 +1,12 @@
 .side-scroll {
     display: flex;
-    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden; 
     .side-scroll-section {
         width: 100vw;
         flex-shrink: 0;
    }
    &::-webkit-scrollbar {
-       width: 0px;
+      width: 2px;
    }
 }
