@@ -3,6 +3,8 @@ class SideScroller {
     this.element = element;
     // Set the height
     this.element.style.height = this.element.dataset.height;
+    // set the width of all scroll items
+    this.scrollItems = document.querySelectorAll('side-scroll-section')
     document.addEventListener('scroll', () => {
       // console.log(this.isScrollLeftorRight())
       if (this.isBellow()) {
@@ -10,7 +12,7 @@ class SideScroller {
           // put the element is proper view
           document.documentElement.scrollTop = document.querySelector('.nav').offsetTop;
           // scroll right
-          this.element.scrollLeft += 10;
+          this.element.scrollLeft += 20;
         }
       }
     });
@@ -24,7 +26,7 @@ class SideScroller {
     return botCheck;
   }
 
-  isScrollLeftorRight() {
+  isScrollLeftorRight () {
     if (this.element.scrollLeft === 0) {
       return "left";
     } if ((this.element.scrollLeft + this.element.clientWidth) === this.element.scrollWidth) {
