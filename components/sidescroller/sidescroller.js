@@ -12,7 +12,7 @@ class SideScroller {
           // put the element is proper view
           document.documentElement.scrollTop = document.querySelector('.nav').offsetTop;
           // scroll right
-          this.element.scrollLeft += 20;
+          this.element.scrollLeft += 50;
         }
       }
     });
