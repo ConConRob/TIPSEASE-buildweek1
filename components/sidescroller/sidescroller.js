@@ -1,44 +1,74 @@
 class SideScroller {
   constructor(element) {
     this.element = element;
+    this.lastWindowHeight = document.documentElement.scrollTop;
+    this.element.scrollLeft = 0;
+    this.stopScroll = false;
     // Set the height
+    this.scrollNumber = 0;
     this.element.style.height = this.element.dataset.height;
     // set the width of all scroll items
-    this.scrollItems = document.querySelectorAll('side-scroll-section')
+
+    this.scrollItems = document.querySelectorAll('side-scroll-section');
     document.addEventListener('scroll', () => {
-      // if going down
-      
-      if (!this.isBellow()) {
-        if (this.isScrollLeftorRight() !== "left") {
-         
-          // put in proper view for going up
-          document.documentElement.scrollTop = document.querySelector('.nav').offsetTop-3;
-          // go left
-          this.element.scrollLeft -= 50;
-          console.log("here left");
-          
+      // console.log ("scrolled");
+      // is going down
+      if (!this.stopScroll) {
+        if (this.navAtzero()) {
+          // case 1 going down
+          if (this.isDown()) {
+            // need to scroll side bar right ?
+            if (this.isScrollLeftorRight() !== "right") {
+
+              // set y scroll
+              this.holdYScroll();
+            
+              // scroll to the left
+              this.element.scrollLeft += 50;
+              console.log('going down');
+            }
+          } else if (!this.isDown()) {
+            // going up
+            // scroll left?
+            if (this.isScrollLeftorRight() !== "left") {
+              // set y scroll
+              this.holdYScroll();
+              // scroll to the left
+              this.element.scrollLeft -= 50;
+            }
+          }
         }
-      }
-      else if (this.isBellow()) {
-        if (this.isScrollLeftorRight() !== "right") {
-         
-          // put the element is proper view
-          document.documentElement.scrollTop = document.querySelector('.nav').offsetTop;
-          // scroll right
-          console.log("here right");
-          this.element.scrollLeft += 50;
-         
-        }
+      } else {
+        this.stopScroll = false;
       }
     });
   }
 
+  navAtzero() {
+    const nav = document.querySelector('.nav');
+    const bound = nav.getBoundingClientRect();
+    const top = bound.top;
+    if ((-20 < top) && (top < 20)) {
+      return true;
+    }
+  }
+
+  // hold at scroller
+  holdYScroll() {
+    const pos = document.querySelector('.nav').offsetTop;
+    this.lastWindowHeight = pos;
+    this.stopScroll = true;
+    document.documentElement.scrollTop = document.querySelector('.nav').offsetTop;
+  }
+
   // check if at view spot
-  isBellow() {
-    const bound = this.element.getBoundingClientRect();
-    // check if bot of element is touching bot of window
-    const botCheck = bound.bottom < (window.innerHeight || document.documentElement.clientHeight);
-    return botCheck;
+  isDown() {
+    if (this.lastWindowHeight < document.documentElement.scrollTop) {
+      this.lastWindowHeight = document.documentElement.scrollTop;
+      return true;
+    }
+    this.lastWindowHeight = document.documentElement.scrollTop;
+    return false;
   }
 
   isScrollLeftorRight () {
