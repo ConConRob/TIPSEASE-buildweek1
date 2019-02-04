@@ -6,13 +6,28 @@ class SideScroller {
     // set the width of all scroll items
     this.scrollItems = document.querySelectorAll('side-scroll-section')
     document.addEventListener('scroll', () => {
-      // console.log(this.isScrollLeftorRight())
-      if (this.isBellow()) {
+      // if going down
+      
+      if (!this.isBellow()) {
+        if (this.isScrollLeftorRight() !== "left") {
+         
+          // put in proper view for going up
+          document.documentElement.scrollTop = document.querySelector('.nav').offsetTop-3;
+          // go left
+          this.element.scrollLeft -= 50;
+          console.log("here left");
+          
+        }
+      }
+      else if (this.isBellow()) {
         if (this.isScrollLeftorRight() !== "right") {
+         
           // put the element is proper view
           document.documentElement.scrollTop = document.querySelector('.nav').offsetTop;
           // scroll right
+          console.log("here right");
           this.element.scrollLeft += 50;
+         
         }
       }
     });
