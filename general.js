@@ -16,19 +16,19 @@ document.addEventListener('scroll', () => {
   if ((document.documentElement.scrollTop > yspot) && isDisplayed) {
     isDisplayed = false;
     // hide
-    TweenMax.to(content, 0.4, { y: 200, opacity: 0, display: 'none' });
+    TweenMax.to(content, 0.2, { y: 100, opacity: 0, display: 'none' });
     // show 
-    setTimeout( () =>{
-      TweenMax.fromTo(signUp, 0.4, { y: 200, opacity: 0, display: 'none' }, { y: 0, opacity: 1, display: 'block' })
-    }, 400,
+    setTimeout( () => {
+      TweenMax.fromTo(signUp, 0.2, { y: 100, opacity: 0, display: 'none' }, { y: 0, opacity: 1, display: 'block' })
+    }, 200,
     );
   } else if ((document.documentElement.scrollTop < yspot) && !isDisplayed) {
     // hide
-    TweenMax.to(signUp, 0.4, { y: 200, opacity: 0, display: 'none' });
+    TweenMax.to(signUp, 0.2, { y: 100, opacity: 0, display: 'none' });
     // show
-    setTimeout( () =>{
-      TweenMax.fromTo(content, 0.4, { y: 200, opacity: 0, display: 'none' }, { y: 0, opacity: 1, display: 'block' })
-    }, 400,
+    setTimeout( () => {
+      TweenMax.fromTo(content, 0.2, { y: 100, opacity: 0, display: 'none' }, { y: 0, opacity: 1, display: 'block' })
+    }, 200,
     );
     isDisplayed = true;
   }
