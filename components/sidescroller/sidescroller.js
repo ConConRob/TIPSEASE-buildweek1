@@ -8,9 +8,7 @@ class SideScroller {
     this.scrollNumber = 0;
     // this.element.style.height = this.element.dataset.height;
     // set the width of all scroll items
-    this.scrollSection = document.querySelectorAll('.side-scroll-section').forEach((section) => {
-      return new ScrollSection(section);
-    });
+    this.scrollSection = document.querySelectorAll('.side-scroll-section').forEach(section => new ScrollSection(section));
     this.scrollItems = document.querySelectorAll('side-scroll-section');
     document.addEventListener('scroll', () => {
       // check to stop it from calling its self
@@ -68,7 +66,7 @@ class SideScroller {
     return false;
   }
 
-  isScrollLeftorRight () {
+  isScrollLeftorRight() {
     if (this.element.scrollLeft === 0) {
       return "left";
     } if ((this.element.scrollLeft + this.element.clientWidth + 4) >= this.element.scrollWidth) {

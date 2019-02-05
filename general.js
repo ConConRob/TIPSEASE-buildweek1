@@ -38,4 +38,3 @@ const nav = document.querySelector('header.nav');
 hero.style.height = `${window.innerHeight - nav.offsetHeight}px`;
 
 // set height of mobilenav
-
