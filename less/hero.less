@@ -1,0 +1,54 @@
+.hero   {
+    position: relative;
+    height: 95vh;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    text-align: center;
+    .content {
+        height: 90vh;
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: center;
+        align-items: center;
+    }
+    h1 {
+        font-size: 7rem;
+        width: 100%;
+    }   
+    p {
+        align-self: flex-start;
+        font-size: 2rem;
+    }
+    .hero-button {
+        border: 2px solid white;
+        border-radius: 50px;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 40px 40%;
+      
+        font-weight: 900; 
+    }
+    .sign-up-button {
+        border: 5px solid white;
+        height: 50px;
+        width: 200px;
+        font-size: 2.5rem;
+        display: none; 
+        position: absolute;
+        bottom: 20vh;
+
+    }
+    #scrollMarker {
+        position: absolute;
+        top: 30vh;
+        width: 20px;
+        height: 20px;
+        background: red;
+    }
+}
