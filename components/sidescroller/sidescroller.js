@@ -6,7 +6,7 @@ class SideScroller {
     this.stopScroll = false;
     // Set the height
     this.scrollNumber = 0;
-    this.element.style.height = this.element.dataset.height;
+    // this.element.style.height = this.element.dataset.height;
     // set the width of all scroll items
     this.scrollSection = document.querySelectorAll('.side-scroll-section').forEach((section) => {
       return new ScrollSection(section);

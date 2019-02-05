@@ -13,9 +13,11 @@
     .row {
         display: flex;
         height: 70%;
-        
+        @media @small {
+            flex-direction: column;
+         }
         .column {
-            color: white;
+            color: @main-text-with-background;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -23,6 +25,10 @@
             padding: 15px;
             background: @main-back-ground-color;
             margin: 10px;
+            @media @small {
+                width: 70%;
+                margin: 20px auto;
+             }
         }
     }
     p {
@@ -37,8 +43,13 @@
         font-size: 40px;
         border: 2px solid black;
         border-radius: 100px;
-        width: 75px;
-        height: 75px;
+        width: 30%;
+        
         margin-bottom: 15px; 
+        &:before{
+            content: "";
+            display: block;
+            padding-top: 100%;  /* ratio of 1:1*/
+        }
     }
 }

@@ -3,45 +3,55 @@
     height: 90vh;
     display: flex;
     flex-wrap: wrap; 
-    justify-content: space-around;
-    align-items: center;
-    color: white;
+    justify-content: center;
+    align-items: flex-end;
+    color: @nonbackground-header-color;
     text-align: center;
     .content {
         height: 90vh;
         display: flex;
-        flex-wrap: wrap; 
-        justify-content: center;
+       flex-direction: column; 
+        justify-content: flex-end;
         align-items: center;
+        text-align: center;
+        padding-bottom: 6%;
     }
     h1 {
         width: 100%;
+        padding-bottom: 5%;
+        line-height: 1.2;
     }   
     p {
-        width: 60%;
-        align-self: flex-start;
+        width: 80%;
         font-size: 2.2rem;
+        padding-bottom: 5%;
+        line-height: 1.3;
     }
     .hero-button {
-        border: 2px solid white;
+        border: 2px solid @nonbackground-header-color;;
         border-radius: 50px;
-        width: 50px;
-        height: 50px;
+        width: 5%;
+        min-width: 50px;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: 40px 40%;
-      
+        margin: 0 42.5%;
         font-weight: 900; 
+        font-size: 40px;
+        &:before{
+            content: "";
+            display: block;
+            padding-top: 100%;  /* ratio of 1:1*/
+        }
     }
     .sign-up-button {
-        border: 5px solid white;
+        border: 5px solid @nonbackground-header-color;;
         height: 50px;
         width: 200px;
         font-size: 2.5rem;
         display: none; 
         position: absolute;
-        bottom: 20vh;
+        bottom: 6%;
 
     }
     #scrollMarker {

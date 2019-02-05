@@ -3,9 +3,21 @@
     overflow-x: scroll;
     overflow-y: hidden; 
     margin-bottom: 2%;
+    height: 95vh;
+    @media @small {
+       flex-direction: column;
+       overflow: auto;
+       height: auto;
+    }
     .side-scroll-section {
-        width: 100vw;
+        // width: 100vw;
         flex-shrink: 0;
+        h3 {
+           color: @highlight-text-with-backgroud;
+        }
+         @media @small {
+            margin: 0 auto;
+         }
    }
    &::-webkit-scrollbar {
       width: 2px;

@@ -4,14 +4,19 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @media @small {
+        height: 60vh;
+    }
     h2{
         padding-bottom: 20px;
     }
     h3 {
         padding-bottom: 30px;
+        color: @nonbackground-header-color;
     }
     .sign-up-container {
         background: @main-back-ground-color;
+        color: @main-text-with-background;
         max-width: 600px;
         margin: 0 auto;
         display: flex;
