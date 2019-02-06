@@ -42,11 +42,34 @@ window.addEventListener('resize', () => {
 });
 // scroll to what is tipsease when down arrow is clicked
 document.querySelector('.hero .content .hero-button').addEventListener('click', () => {
+  scrollTo(hero.offsetHeight - 20, 20);
+  // const scrollInterval = setInterval(() => {
+  //   if (window.pageYOffset < hero.offsetHeight - 20) {
+  //     document.documentElement.scrollTop += 20;
+  //   } else {
+  //     clearInterval(scrollInterval);
+  //   }
+  // }, 0.01);
+});
+// make sign up buttons take you to sign up form
+document.querySelectorAll('.sign-up').forEach(button => button.addEventListener('click', () => {
+  scrollTo(hero.offsetHeight, 20, () => {
+    const sideScroll = document.querySelector(".side-scroll"); // this.element.scrollWidth
+    sideScroll.scrollLeft = sideScroll.scrollWidth;
+    scrollTo(sideScroll.offsetTop + sideScroll.offsetHeight, 20);
+  });
+}));
+// document.querySelector('.cta').offsetHeight + document.querySelector('.cta').offsetTop
+function scrollTo(yLocation, speed, cb) {
   const scrollInterval = setInterval(() => {
-    if (window.pageYOffset < hero.offsetHeight - 20) {
-      document.documentElement.scrollTop += 20;
+    const curpos = document.documentElement.scrollTop + window.innerHeight;
+    if ((window.pageYOffset < yLocation) && (curpos < document.documentElement.scrollHeight)) {
+      document.documentElement.scrollTop += speed;
     } else {
       clearInterval(scrollInterval);
+      if (cb) {
+        cb();
+      }
     }
-  }, 0.01);
-});
+  }, 10);
+}
