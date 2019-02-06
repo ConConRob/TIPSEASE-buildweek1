@@ -11,7 +11,18 @@
 
 <body>
     <div class="background">
-
+        <!-- LOGIN MODAL -->
+        <div class="login-modal hide">
+            <div class="login-content">
+                <form action="">
+                    <input type="text" placeholder="email">
+                    <input type="password" placeholder="password">
+                    <div class="submit-login">Login!</div>
+                </form>
+                <div class="close-modal">X</div>
+            </div>
+        </div>
+        <!-- MOBILE NAV -->
         <div class="open-nav">
             <ion-icon name="menu"></ion-icon>
         </div>
@@ -21,16 +32,16 @@
             </div>
             <nav>
                 <div class="links">
-                        <a href="#">About</a>
-                        <a href="#">Services</a>
-                        <a href="#">Login</a>
-                        <a href="#">Sign Up</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a class="login">Login</a>
+                    <a href="#">Sign Up</a>
                 </div>
                 <div class="social">
-                    <a class ="twitter" href="https://twitter.com">
+                    <a class="twitter" href="https://twitter.com">
                         <ion-icon name="logo-twitter"></ion-icon>
                     </a>
-                    <a class ="facebook" href="https://www.facebook.com/">
+                    <a class="facebook" href="https://www.facebook.com/">
                         <ion-icon name="logo-facebook"></ion-icon>
                     </a>
                     <a class="instagram" href="https://instagram.com">
@@ -57,25 +68,25 @@
         <header class="nav">
             <nav>
                 <div class="links">
-                        <a href="#">About</a>
-                        <a href="#">Services</a>
-                        <a href="#">Login</a>
-                        <a href="#">Sign Up</a>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a class="login">Login</a>
+                    <a href="#">Sign Up</a>
                 </div>
                 <div class="social">
-                        <a class ="twitter" href="https://twitter.com">
-                            <ion-icon name="logo-twitter"></ion-icon>
-                        </a>
-                        <a class ="facebook" href="https://www.facebook.com/">
-                            <ion-icon name="logo-facebook"></ion-icon>
-                        </a>
-                        <a class="instagram" href="https://instagram.com">
-                            <ion-icon name="logo-instagram"></ion-icon>
-                        </a>
-                        <a class="github" href="https:/github.com">
-                            <ion-icon name="logo-github"></ion-icon>
-                        </a>
-                    </div>
+                    <a class="twitter" href="https://twitter.com">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                    <a class="facebook" href="https://www.facebook.com/">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                    </a>
+                    <a class="instagram" href="https://instagram.com">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                    <a class="github" href="https:/github.com">
+                        <ion-icon name="logo-github"></ion-icon>
+                    </a>
+                </div>
             </nav>
         </header>
         <div id="mobileBreak">
@@ -209,25 +220,27 @@
                             <p class="disclaimer">By creating an account, you agree to our <a>Terms & Conditions</a></p>
                         </div>
                         <div class="row">
-                            <div class = "submit" type="submit"><p>Create Account!</p><div>
-                        </div>
+                            <div class="submit" type="submit">
+                                <p>Create Account!</p>
+                                <div>
+                                </div>
                     </form>
                 </div>
             </section>
-        
-        <footer class="nav">
-            <nav>
-                <div class="links">
-                    <a href="#">About</a>
-                    <a href="#">Services</a>
-                    <a href="#">Login</a>
-                    <a href="#">Sign Up</a>
-                </div>
-                <div class="social">
-                        <a class ="twitter" href="https://twitter.com">
+
+            <footer class="nav">
+                <nav>
+                    <div class="links">
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a class="login">Login</a>
+                        <a href="#">Sign Up</a>
+                    </div>
+                    <div class="social">
+                        <a class="twitter" href="https://twitter.com">
                             <ion-icon name="logo-twitter"></ion-icon>
                         </a>
-                        <a class ="facebook" href="https://www.facebook.com/">
+                        <a class="facebook" href="https://www.facebook.com/">
                             <ion-icon name="logo-facebook"></ion-icon>
                         </a>
                         <a class="instagram" href="https://instagram.com">
@@ -237,15 +250,16 @@
                             <ion-icon name="logo-github"></ion-icon>
                         </a>
                     </div>
-            </nav>
-        </footer>
-    </div>
+                </nav>
+            </footer>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 
     <script src="https://unpkg.com/ionicons@4.5.5/dist/ionicons.js"></script>
     <script src="components/sidescroller/sidescroller.js"></script>
     <script src="components/mobile-nav/mobile-nav.js"></script>
+    <script src="components/login-modal/login-modal.js"></script>
     <script src="general.js"></script>
 </body>
 
