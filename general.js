@@ -43,7 +43,7 @@ window.addEventListener('resize', () => {
 // scroll to what is tipsease when down arrow is clicked
 document.querySelector('.hero .content .hero-button').addEventListener('click', () => {
   const scrollInterval = setInterval(() => {
-    if (window.pageYOffset < nav.offsetTop - 20) {
+    if (window.pageYOffset < hero.offsetHeight - 20) {
       document.documentElement.scrollTop += 20;
     } else {
       clearInterval(scrollInterval);
