@@ -43,13 +43,6 @@ window.addEventListener('resize', () => {
 // scroll to what is tipsease when down arrow is clicked
 document.querySelector('.hero .content .hero-button').addEventListener('click', () => {
   scrollTo(hero.offsetHeight - 20, 20);
-  // const scrollInterval = setInterval(() => {
-  //   if (window.pageYOffset < hero.offsetHeight - 20) {
-  //     document.documentElement.scrollTop += 20;
-  //   } else {
-  //     clearInterval(scrollInterval);
-  //   }
-  // }, 0.01);
 });
 // make sign up buttons take you to sign up form
 document.querySelectorAll('.sign-up').forEach(button => button.addEventListener('click', () => {

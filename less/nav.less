@@ -56,10 +56,17 @@ header.nav {
 footer.nav {
     
     @media @small {
+        nav{
+            max-width: 100%;
+        }
+        .links {
+            width: 50%;
+        }
         .social {
-            width: 30%;
+            width: 40%;
             display: flex;
             overflow: hidden;
+            justify-content: space-between;
         }
     }
 }
@@ -68,7 +75,7 @@ footer.nav {
     height: 40px;
     font-size: 40px;
     color: aliceblue;
-    position: sticky;
+    position: fixed;
     top : 10px;
     left: 90%;
     z-index: 1;
@@ -93,8 +100,8 @@ footer.nav {
     display: none;
     opacity: 0;
     nav {
-        position: sticky;
-        top: 40%;
+        position: fixed;
+        top: 30vh;
     }
     .links {
         display: flex;
@@ -114,7 +121,7 @@ footer.nav {
         color: black;
     }
     .close-nav {
-        position: sticky;
+        position: fixed;
         top: 10px;
         left: 90%;
         font-size: 40px;

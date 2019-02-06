@@ -72,8 +72,6 @@ class SideScroller {
     } if ((this.element.scrollLeft + this.element.clientWidth + 4) >= this.element.scrollWidth) {
       return "right";
     }
-    // console.log(this.element.scrollLeft + this.element.clientWidth);
-    // console.log(this.element.scrollWidth);
   }
 
   setHeight() {
