@@ -7,7 +7,7 @@
     max-width: 1500px;
     width: 95vw;
     @media @small { 
-        width: 75%;
+        width: 100%;
         margin: 0 auto;
     }
     h2 {
@@ -25,6 +25,7 @@
         background: @main-back-ground-color;
         @media @small {
             flex-direction: column;
+            background: none;
             
         }
         .img-card {
@@ -37,9 +38,10 @@
             background: darken(@main-back-ground-color, 10%);
             margin: 10px;
             @media @small {
-                width: 90%;
+                width: 75%;
                 font-size: 3rem;
                 margin: 10px 0;
+                background: @main-back-ground-color;
             }
         }
         img {
