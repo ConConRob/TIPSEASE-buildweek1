@@ -40,3 +40,13 @@ hero.style.height = `${window.innerHeight - nav.offsetHeight}px`;
 window.addEventListener('resize', () => {
   hero.style.height = `${window.innerHeight - nav.offsetHeight}px`;
 });
+// scroll to what is tipsease when down arrow is clicked
+document.querySelector('.hero .content .hero-button').addEventListener('click', () => {
+  const scrollInterval = setInterval(() => {
+    if (window.pageYOffset < nav.offsetTop - 20) {
+      document.documentElement.scrollTop += 20;
+    } else {
+      clearInterval(scrollInterval);
+    }
+  }, 0.01);
+});
