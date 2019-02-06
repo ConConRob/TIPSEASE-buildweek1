@@ -17,12 +17,11 @@ class SideScroller {
           // case 1 going down
           if (this.isDown()) {
             // need to scroll side bar right ?
-            // console.log(this.isScrollLeftorRight());
             if (this.isScrollLeftorRight() !== "right") {
               // set y scroll
               this.holdYScroll();
               // scroll to the right
-              this.element.scrollLeft += 50;
+              this.element.scrollLeft += 75;
               // console.log('going down');
             }
           }
@@ -34,7 +33,7 @@ class SideScroller {
               // set y scroll
               this.holdYScroll();
               // scroll to the left
-              this.element.scrollLeft -= 50;
+              this.element.scrollLeft -= 75;
             }
           }
         }

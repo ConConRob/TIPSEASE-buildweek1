@@ -19,7 +19,7 @@ document.addEventListener('scroll', () => {
     TweenMax.to(content, 0.2, { y: 100, opacity: 0, display: 'none' });
     // show
     setTimeout(() => {
-      TweenMax.fromTo(signUp, 0.2, { y: 100, opacity: 0, display: 'none' }, { y: 0, opacity: 1, display: 'block' });
+      TweenMax.fromTo(signUp, 0.2, { y: 100, opacity: 0, display: 'none' }, { y: 0, opacity: 1, display: 'flex' });
     }, 200);
   } else if ((document.documentElement.scrollTop < yspot) && !isDisplayed) {
     // hide
@@ -36,5 +36,7 @@ document.addEventListener('scroll', () => {
 const hero = document.querySelector('.hero');
 const nav = document.querySelector('header.nav');
 hero.style.height = `${window.innerHeight - nav.offsetHeight}px`;
-
-// set height of mobilenav
+// make sure that the sizing is right when window is resized
+window.addEventListener('resize', () => {
+  hero.style.height = `${window.innerHeight - nav.offsetHeight}px`;
+});
