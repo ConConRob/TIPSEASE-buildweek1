@@ -8,18 +8,18 @@ class Login {
     this.closeButton.addEventListener('click', () => this.hideLogin());
     // close if clicked on area around login content
     this.loginMenu.addEventListener('click', (event) => {
-      console.log(event.target);
       this.checkWhereClickandHide(event.target);
     });
   }
 
   showLogin() {
-    this.loginMenu.classList.remove('hide');
-    console.log(this.loginMenu.childNodes);
+    // this.loginMenu.classList.remove('hide');
+    TweenMax.to(this.loginMenu, 0.4, { opacity: 1, display: 'flex' });
   }
 
   hideLogin() {
-    this.loginMenu.classList.add('hide');
+    // this.loginMenu.classList.add('hide');
+    TweenMax.to(this.loginMenu, 0.4, { opacity: 0, display: 'none' });
   }
 
   checkWhereClickandHide(target) {
