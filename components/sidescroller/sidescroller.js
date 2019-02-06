@@ -6,10 +6,11 @@ class SideScroller {
     this.stopScroll = false;
     // Set the height
     this.scrollNumber = 0;
-    // this.element.style.height = this.element.dataset.height;
-    // set the width of all scroll items
-    this.scrollSection = document.querySelectorAll('.side-scroll-section').forEach(section => new ScrollSection(section));
-    this.scrollItems = document.querySelectorAll('side-scroll-section');
+
+    // make sure that the sizing is right when window is resized
+    this.setHeight();
+    window.addEventListener('resize', () => { this.setHeight(); });
+
     document.addEventListener('scroll', () => {
       // check to stop it from calling its self
       if (!this.stopScroll) {
@@ -74,12 +75,22 @@ class SideScroller {
     // console.log(this.element.scrollLeft + this.element.clientWidth);
     // console.log(this.element.scrollWidth);
   }
+
+  setHeight() {
+    const nav = document.querySelector('header.nav');
+    if (window.innerWidth > 992) {
+      this.element.style.height = `${window.innerHeight * 0.9 - nav.offsetHeight}px`;
+    } else {
+      // if in mobile state
+      this.element.style.height = "";
+    }
+  }
 }
 
 class ScrollSection {
   constructor(section) {
     this.section = section;
-    this.section.style.width = this.section.dataset.width;
+    // this.section.style.width = this.section.dataset.width;
   }
 }
 // find side scroller and make a new object
