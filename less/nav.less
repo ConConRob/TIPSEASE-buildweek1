@@ -1,9 +1,9 @@
-header.nav {
+.nav {
     nav{
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        background-color: hsla(60, 53%, 91%, 0.349);
+        
         height: 100%;
         .links {
             font-size: 1.8rem;
@@ -20,11 +20,80 @@ header.nav {
             }
         }
         a {
-            color: white;
+            color: @main-text-with-background;
             text-decoration: none;
         }
     }
-    height: 5vh;
-    width: 80%;
+    background-color: @main-back-ground-color;
+    height: 10vh;
+    max-height: 40px;
+    width: 100%;
     margin: 0 auto;
+}
+header.nav {
+    @media @small {
+        display: none;
+        .nav-hamburger-menu {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            background: coral;
+            height: 20px;
+            width: 100%;
+        }
+    }
+
+}
+.open-nav {
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    color: aliceblue;
+    position: sticky;
+    top : 10px;
+    left: 90%;
+    z-index: 1;
+    display: none;
+}
+.mobile-nav {
+    z-index: 1;
+    position: absolute;
+    top:0;
+    height: 100%;
+    width: 100%;
+    background: rgba(211, 211, 211, 0.979);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    display: none;
+    opacity: 0;
+    nav {
+        position: sticky;
+        top: 40%;
+    }
+    .links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    a {
+        text-decoration: none;
+        font-size: 3rem;
+        padding: 5% 0;
+        color: black;
+    }
+    .close-nav {
+        position: sticky;
+        top: 10px;
+        left: 90%;
+        font-size: 40px;
+    }
+}
+@media @small {
+    .open-nav {
+        display: block;
+
+    }
 }

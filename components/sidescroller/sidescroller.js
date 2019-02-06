@@ -6,11 +6,9 @@ class SideScroller {
     this.stopScroll = false;
     // Set the height
     this.scrollNumber = 0;
-    this.element.style.height = this.element.dataset.height;
+    // this.element.style.height = this.element.dataset.height;
     // set the width of all scroll items
-    this.scrollSection = document.querySelectorAll('.side-scroll-section').forEach((section) => {
-      return new ScrollSection(section);
-    });
+    this.scrollSection = document.querySelectorAll('.side-scroll-section').forEach(section => new ScrollSection(section));
     this.scrollItems = document.querySelectorAll('side-scroll-section');
     document.addEventListener('scroll', () => {
       // check to stop it from calling its self
@@ -19,7 +17,7 @@ class SideScroller {
           // case 1 going down
           if (this.isDown()) {
             // need to scroll side bar right ?
-            //console.log(this.isScrollLeftorRight());
+            // console.log(this.isScrollLeftorRight());
             if (this.isScrollLeftorRight() !== "right") {
               // set y scroll
               this.holdYScroll();
@@ -68,10 +66,10 @@ class SideScroller {
     return false;
   }
 
-  isScrollLeftorRight () {
+  isScrollLeftorRight() {
     if (this.element.scrollLeft === 0) {
       return "left";
-    } if ((this.element.scrollLeft + this.element.clientWidth+4) >= this.element.scrollWidth) {
+    } if ((this.element.scrollLeft + this.element.clientWidth + 4) >= this.element.scrollWidth) {
       return "right";
     }
     // console.log(this.element.scrollLeft + this.element.clientWidth);

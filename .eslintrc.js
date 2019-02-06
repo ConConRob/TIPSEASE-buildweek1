@@ -11,5 +11,11 @@ module.exports = {
         "no-plusplus":0,
         "no-param-reassign":0,
         "class-methods-use-this":0,
+        "no-use-before-define":0,
+        "consistent-return":0,
+        "no-unused-vars":0,
     },
+    "globals": {
+        "TweenMax": true,
+    }
 };
