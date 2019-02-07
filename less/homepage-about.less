@@ -4,9 +4,11 @@
     justify-content: space-between;
     height: 100%;
     width: 95vw;
+    min-width: 1200px;
     // min-width: 1440px;
     @media @small {
         width: 100%;
+        min-width: 0;
     }
     h2 {
         text-align: center;
@@ -17,23 +19,44 @@
    
     .row {
         display: flex;
-        height: 70%;
+        height: 80%;
         @media @small {
             flex-direction: column;
          }
         .column {
-            border-radius: 10px;
+           
             color: @main-text-with-background;
             display: flex;
             max-width: 33%;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            padding: 15px;
             background: @main-back-ground-color;
             margin: 0 10px;
-            font-size: 1.7rem; 
+            font-size: 1.7rem;
+            min-width: 370px;
+            min-height: 510px;
+            border-bottom: 20px solid @nonbackground-header-color; 
+            .card-container{
+                padding-left: 20px;
+                padding-right: 20px;
+                height: 100%;
+                @media @small {
+                    height: 300px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                }
+                h3{
+                    padding-top: 10%;
+                    @media @small {
+                   
+                    }
+                }
+            } 
             @media @small {
+                max-width: 100%;
+                min-width: 0;
                 width: 75%;
                 margin: 20px auto;
                 font-size: 1.8rem;
@@ -41,35 +64,17 @@
         }
     }
     img {
-        border-radius: 10px;
-        max-width: 500px;
+        
         max-height: 300px;
+        height: 100%;
         width: 100%;
-        @media @small {
-            width: 90%;
-            padding: 10px 0;
-        }
+        
     }
     p {
         font-size: 1.7rem;
-        padding: 0 5% 5% 5%;
         line-height: 1.3;
-    }
-    .icon-container {
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        font-size: 40px;
-        border: 2px solid black;
-        border-radius: 100px;
-        width: 30%;
-        
-        margin-bottom: 15px; 
-        &:before{
-            content: "";
-            display: block;
-            padding-top: 100%;  /* ratio of 1:1*/
-        }
+        padding-top: 6%;
+        padding-bottom: 6%;
+
     }
 }

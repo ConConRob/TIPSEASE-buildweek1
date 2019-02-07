@@ -5,8 +5,7 @@
     justify-content: space-between;
     align-items: center;
     width: 300px;
-    // margin-left: 2.5vh;
-    // margin-right: 2.5vh;
+    
     @media @small {
         width: 100%;
         justify-content: stretch;
@@ -25,11 +24,12 @@
     }
     .steps {
         background-color: @main-back-ground-color;
-        border-radius: 10px;
         padding: 0 5%;
-        height: 70%;
+        height: 80%;
         color: @main-text-with-background;
         width: 300px;
+        min-height: 510px;
+        border-bottom: 20px solid @nonbackground-header-color; 
         @media @small {
             flex-direction: row;
             width: 75%;
