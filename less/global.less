@@ -13,7 +13,7 @@ body {
     scroll-behavior:smooth;
 }
 h1,h2,h3,h4,h5,h6 {
-    font-family:  "Sans Pro", Helvetica, sans-serif;
+    font-family:  @main-header;
     font-weight: 900;
 }
 h1 {
@@ -33,7 +33,9 @@ html {
 * {
     box-sizing: border-box;
 }
-
+p, input, a, div {
+    font-family: @normal-font;
+}
 @media @small {
     #mobileBreak{
         display: flex;
