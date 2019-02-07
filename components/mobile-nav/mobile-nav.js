@@ -4,7 +4,6 @@ const mobileNav = document.querySelector(".mobile-nav");
 const closeButton = document.querySelector(".close-nav");
 // select mobile nav links
 const mobileNavLinks = document.querySelectorAll(".mobile-nav .links a");
-console.log(mobileNavLinks);
 openButton.addEventListener("click", openMobileNav);
 closeButton.addEventListener("click", closeMobileNav);
 // if link is clicked in mobile nav, close the mobile nav

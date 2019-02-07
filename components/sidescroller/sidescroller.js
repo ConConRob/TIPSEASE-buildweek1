@@ -23,7 +23,7 @@ class SideScroller {
               this.holdYScroll();
               // scroll to the right
               this.element.scrollLeft += 75;
-              // console.log('going down');
+             
             }
           }
         } else if (!this.navAboveWindow()) {
