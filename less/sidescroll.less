@@ -2,22 +2,23 @@
     display: flex;
     overflow-x: scroll;
     overflow-y: hidden; 
-    margin-bottom: 2%;
-    height: 95vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    h2 {
+       margin-top: 8vh;
+    }
     @media @small {
        flex-direction: column;
-       overflow: auto;
-       height: auto;
+       overflow: visible;
     }
     .side-scroll-section {
-        // width: 100vw;
-        flex-shrink: 0;
+         flex-shrink: 0;
+         margin-left: 4vw;
+         margin-right: 4vw;
         h3 {
            color: @highlight-text-with-backgroud;
         }
-         @media @small {
-            margin: 0 auto;
-         }
+         
    }
    &::-webkit-scrollbar {
       width: 2px;

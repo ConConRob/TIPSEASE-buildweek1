@@ -2,17 +2,20 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    width: 300px;
+    // margin-left: 2.5vh;
+    // margin-right: 2.5vh;
     @media @small {
-        margin: 0 auto;
         width: 100%;
+        justify-content: stretch;
     }
     h2 {
-        padding: 15px;
-        padding-top: 40px;
         text-align: center;
-        
+        @media @small {
+            margin: 50px 0 30px 0;
+        }
     }
     h3 {
         font-size: 1.8rem;
@@ -22,22 +25,25 @@
     }
     .steps {
         background-color: @main-back-ground-color;
+        border-radius: 10px;
         padding: 0 5%;
         height: 70%;
         color: @main-text-with-background;
+        width: 300px;
         @media @small {
             flex-direction: row;
+            width: 75%;
         }
     }
     .step {
         display: flex;
+        
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
         height: 30%;
         flex-shrink: 0;
-        text-align: center;
-        
+        text-align: center;    
     }
     .icon-container {
         display: flex;

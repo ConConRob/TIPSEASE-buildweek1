@@ -3,22 +3,37 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    max-width: 1500px;
+    padding-right: 5vw;
+    width: 95vw;
+    @media @small { 
+        width: 100%;
+        margin: 0 auto;
+        padding-right: 0;
+    }
     h2 {
-        padding: 15px;
-        padding-top: 40px;
+
         text-align: center;
+        @media @small {
+            margin: 50px 0 30px 0;
+        }
     }
     .images {
-        width: 80%;
+        width: 100%;
         display: flex;
         height: 70%;
         align-items: center;
-        margin: 10px;
         background: @main-back-ground-color;
+        border-radius: 10px;
+        padding-left: 10px;
+        padding-right: 10px ;
         @media @small {
             flex-direction: column;
-            padding: 10px;
+            background: none;
+            padding-left: 0;
+            padding-right: 0 ;
+            
         }
         .img-card {
             display: flex;
@@ -26,18 +41,34 @@
             justify-content: space-around;
             padding: 10px;
             width: 32%;
-            height: 50%;
+            height: 80%;
             background: darken(@main-back-ground-color, 10%);
             margin: 10px;
+            border-radius: 10px;
             @media @small {
-                width: 90%;
+                width: 75%;
                 font-size: 3rem;
-                margin: 10px 0;
+                margin: 20px 0;
+                background: @main-back-ground-color;
             }
         }
         img {
             width: 100%;
             height: 50%;
+            max-width: 300px;
+            max-height: 200px;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+        h4{
+            font-size: 2rem;
+            text-align: center;
+            color: @highlight-text-with-backgroud;
+        }
+        p {
+            font-size: 1.6rem;
+            line-height: 1.2;
+            color: @main-text-with-background;
         }
     }
 }

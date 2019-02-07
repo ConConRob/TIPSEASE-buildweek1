@@ -1,20 +1,29 @@
 .nav {
+    overflow: hidden;
     nav{
+        max-width: 80%;
+        margin: 0 auto;
         display: flex;
         justify-content: space-between;
-        align-items: flex-end;
+        align-items: center;
         
         height: 100%;
         .links {
             font-size: 1.8rem;
-            width: 50%;
+            width: 30%;
             display: flex;
             justify-content: space-between;
             padding-bottom: 6px;
-            padding-left: 6px
+            padding-left: 6px;
+            a {
+                &:hover {
+                    color: darken(@nonbackground-header-color, 10%);
+                    text-decoration: underline;
+                }
+            }
         }
         .social {
-            font-size: 2.3rem;
+            font-size: 3rem;
             a {
                 padding-right: 10px;
             }
@@ -26,7 +35,7 @@
     }
     background-color: @main-back-ground-color;
     height: 10vh;
-    max-height: 40px;
+    max-height: 60px;
     width: 100%;
     margin: 0 auto;
 }
@@ -44,16 +53,38 @@ header.nav {
     }
 
 }
+footer.nav {
+    
+    @media @small {
+        nav{
+            max-width: 100%;
+        }
+        .links {
+            width: 50%;
+        }
+        .social {
+            width: 40%;
+            display: flex;
+            overflow: hidden;
+            justify-content: space-between;
+        }
+    }
+}
 .open-nav {
     width: 40px;
     height: 40px;
     font-size: 40px;
     color: aliceblue;
-    position: sticky;
+    position: fixed;
     top : 10px;
     left: 90%;
     z-index: 1;
     display: none;
+    transition: 0.3s;
+    &:hover {
+        color:@nonbackground-header-color;
+        cursor: pointer;
+    }
 }
 .mobile-nav {
     z-index: 1;
@@ -69,14 +100,19 @@ header.nav {
     display: none;
     opacity: 0;
     nav {
-        position: sticky;
-        top: 40%;
+        position: fixed;
+        top: 30vh;
     }
     .links {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        
+        align-items: center; 
+        a {
+            &:hover {
+                color:@nonbackground-header-color;
+                cursor: pointer;
+            }
+        } 
     }
     a {
         text-decoration: none;
@@ -85,10 +121,15 @@ header.nav {
         color: black;
     }
     .close-nav {
-        position: sticky;
+        position: fixed;
         top: 10px;
         left: 90%;
         font-size: 40px;
+        transition: 0.3s;
+        &:hover {
+            color:@nonbackground-header-color;
+            cursor: pointer;
+        }
     }
 }
 @media @small {
@@ -96,4 +137,20 @@ header.nav {
         display: block;
 
     }
+}
+.facebook:hover {
+    color:#3b5998;
+}
+.twitter:hover {
+    color:#55acee;
+}
+.instagram:hover {
+    color:#517fa4;
+}
+.github:hover {
+    color:#171515;
+}
+a {
+    transition: 0.3s;
+    cursor: pointer;
 }

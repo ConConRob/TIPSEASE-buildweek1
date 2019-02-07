@@ -5,7 +5,11 @@
     flex-direction: column;
     justify-content: center;
     @media @small {
-        height: 60vh;
+        height: 50vh;
+        min-height: 600px;
+        width: 75%;
+        padding-left: 4vw;
+        padding-right: 4vw;
     }
     h2{
         padding-bottom: 20px;
@@ -17,23 +21,44 @@
     .sign-up-container {
         background: @main-back-ground-color;
         color: @main-text-with-background;
+        border-radius: 10px;
         max-width: 600px;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 20px;
-        
+        @media @small { 
+            width: 100%;
+            max-width: 800px;
+        }
+        form {
+            width: 100%;
+        }
         .row {
-            max-width: 600px;
+            max-width: 800px;
             display: flex;
             justify-content: space-between;
+            @media @small { 
+                flex-direction: column;
+            }
             input {
                 width: 100%;
                 height: 30px;
                 margin: 20px 0;
+                border: 1px solid black;
+                padding-left: 6px;
+                font-size: 1.8rem;
                 &.name {
                     width: 48%;
+                    @media @small { 
+                        width: 100%;
+                    }
+                }
+                &:focus{
+                    outline: none;
+                    background: @nonbackground-header-color;
+                    color: @highlight-text-with-backgroud;
                 }
             }
             p {
@@ -43,9 +68,24 @@
                     color: @highlight-text-with-backgroud;
                 }
             }
-            button {
+            .submit {
                 margin: 20px 0;
-                width: 100%
+                border: 1px solid black;
+                height: 30px;
+                width: 100%;
+                font-size: 1.8rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: 0.3s;
+                p {
+                    font-size: 1.8rem;
+                }
+                &:hover {
+                    background: @nonbackground-header-color;
+                    color: @highlight-text-with-backgroud;
+                    cursor: pointer;
+                }
             }
         }
     }

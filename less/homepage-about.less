@@ -1,13 +1,17 @@
 .about {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 100%;
-    
+    width: 95vw;
+    @media @small {
+        width: 100%;
+    }
     h2 {
-        padding: 15px;
-        padding-top: 40px;
         text-align: center;
+        @media @small {
+            margin: 50px 0 30px 0;
+        }
     }
    
     .row {
@@ -17,6 +21,7 @@
             flex-direction: column;
          }
         .column {
+            border-radius: 10px;
             color: @main-text-with-background;
             display: flex;
             flex-direction: column;
@@ -24,11 +29,22 @@
             justify-content: space-between;
             padding: 15px;
             background: @main-back-ground-color;
-            margin: 10px;
+            margin: 0 10px;
+            font-size: 1.7rem; 
             @media @small {
-                width: 70%;
+                width: 75%;
                 margin: 20px auto;
+                font-size: 1.8rem;
              }
+        }
+    }
+    img {
+        border-radius: 10px;
+        max-width: 500px;
+        max-height: 300px;
+        @media @small {
+            width: 90%;
+            padding: 10px 0;
         }
     }
     p {
