@@ -77,7 +77,7 @@ class SideScroller {
   setHeight() {
     const nav = document.querySelector('header.nav');
     if (window.innerWidth > 992) {
-      this.element.style.height = `${window.innerHeight * 0.9 - nav.offsetHeight}px`;
+      this.element.style.height = `${window.innerHeight - nav.offsetHeight}px`;
     } else {
       // if in mobile state
       this.element.style.height = "";

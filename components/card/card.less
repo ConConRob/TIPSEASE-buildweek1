@@ -1,0 +1,38 @@
+.card {
+    height: 100%;
+    width : 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: @main-text-with-background;
+    background: @main-back-ground-color;
+    margin: 0 20px;
+    border-bottom: 20px solid @nonbackground-header-color;
+    @media @phone {
+        width: 80%;
+        margin: 20px 0;
+    }
+    img {
+        width: 100%;
+        height: 50%;
+    } 
+    .text-container {
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 20px;
+        h3, h4{
+            font-size: 2rem;
+            color: @highlight-text-with-backgroud;
+        }
+        p {
+            font-size: 1.6rem;
+            line-height: 1.2;
+            color: @main-text-with-background;
+            padding-top: 6%;
+            padding-bottom: 6%;
+        }
+    }
+}
