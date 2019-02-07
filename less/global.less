@@ -45,3 +45,17 @@ p, input, a, div {
         height: auto;
     }
 }
+body {
+    &::-webkit-scrollbar {
+        width: 8px;
+     }
+    &::-webkit-scrollbar-track {
+        background: @main-back-ground-color;
+      }
+    &::-webkit-scrollbar-thumb {
+        background: darken(@nonbackground-header-color, 10%);
+      }
+    &::-webkit-scrollbar-thumb:hover {
+        background: darken(@nonbackground-header-color, 15%);
+      }
+}
