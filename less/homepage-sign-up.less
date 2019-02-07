@@ -20,6 +20,7 @@
     .sign-up-container {
         background: @main-back-ground-color;
         color: @main-text-with-background;
+        border-bottom: 20px solid @nonbackground-header-color;
         max-width: 600px;
         margin: 0 auto;
         display: flex;
@@ -29,6 +30,9 @@
         @media @small { 
             max-width: 100%;
             margin: 0 0;
+        } 
+        @media @phone {
+            border: none;
         }
         form {
             width: 100%;
