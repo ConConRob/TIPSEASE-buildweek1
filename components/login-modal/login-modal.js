@@ -10,11 +10,14 @@ class Login {
     this.loginMenu.addEventListener('click', (event) => {
       this.checkWhereClickandHide(event.target);
     });
+    // set the height for the window size
   }
 
   showLogin() {
     // this.loginMenu.classList.remove('hide');
-    TweenMax.to(this.loginMenu, 0.4, { opacity: 1, display: 'flex' });
+    this.loginMenu.style.display = "flex";
+    this.setHeight();
+    TweenMax.to(this.loginMenu, 0.4, { opacity: 1 });
   }
 
   hideLogin() {
@@ -26,6 +29,11 @@ class Login {
     if (target === this.loginMenu) {
       this.hideLogin();
     }
+  }
+
+  setHeight() {
+    const loginConent = this.loginMenu.querySelector('.login-content');
+    loginConent.style.top = `${(window.innerHeight - loginConent.offsetHeight) / 2}px`
   }
 }
 
