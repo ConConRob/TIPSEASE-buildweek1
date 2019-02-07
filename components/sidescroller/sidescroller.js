@@ -97,5 +97,7 @@ sideScroller = new SideScroller(sideScroller);
 
 // stop mouse down scrolling
 window.addEventListener('mousedown', (event) => {
-  event.preventDefault();
+  if (event.button === 1) {
+    event.preventDefault();
+  }
 });
