@@ -1,4 +1,7 @@
-
+window.addEventListener('mousedown', (event) =>{
+  console.log(event.target);
+  event.preventDefault();
+})
 // Hide hero content at paragraph of content
 
 // now show the sign up button

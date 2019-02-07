@@ -94,3 +94,8 @@ class ScrollSection {
 // find side scroller and make a new object
 let sideScroller = document.querySelector(".side-scroll");
 sideScroller = new SideScroller(sideScroller);
+
+// stop mouse down scrolling
+window.addEventListener('mousedown', (event) => {
+  event.preventDefault();
+});
