@@ -24,6 +24,10 @@
         position: fixed;
         top: 32.5vh;
         border-bottom: 20px solid @nonbackground-header-color;
+        max-width: 100%;
+        @media @landscape {
+            top: 5vh;
+        }
         filter: none;
         input {
             width: 100%;
