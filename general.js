@@ -52,7 +52,9 @@ document.querySelectorAll('.sign-up').forEach(button => button.addEventListener(
     scrollTo(sideScroll.offsetTop + sideScroll.offsetHeight, 20);
   });
 }));
-// document.querySelector('.cta').offsetHeight + document.querySelector('.cta').offsetTop
+// takes in location speed and cb. goes to location at speed if location is
+// out of reach it stops scrolling at bottom of page
+// does call back function at end of scroll
 function scrollTo(yLocation, speed, cb) {
   const scrollInterval = setInterval(() => {
     const curpos = document.documentElement.scrollTop + window.innerHeight;

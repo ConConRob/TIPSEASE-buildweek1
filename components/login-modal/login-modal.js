@@ -33,7 +33,7 @@ class Login {
 
   setHeight() {
     const loginConent = this.loginMenu.querySelector('.login-content');
-    loginConent.style.top = `${(window.innerHeight - loginConent.offsetHeight) / 2}px`
+    loginConent.style.top = `${(window.innerHeight - loginConent.offsetHeight) / 2}px`;
   }
 }
 
