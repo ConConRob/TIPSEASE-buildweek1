@@ -1,47 +1,28 @@
 .how-to {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-between;
-    align-items: center;
-    width: 300px;
-    // margin-left: 2.5vh;
-    // margin-right: 2.5vh;
+    margin: 0 5vw;
     @media @small {
-        width: 100%;
-        justify-content: stretch;
-    }
-    h2 {
-        text-align: center;
-        @media @small {
-            margin: 50px 0 30px 0;
-        }
-    }
-    h3 {
-        font-size: 1.8rem;
-        @media @small {
-            padding-top: 20px;
-        }
+        align-self: stretch;
+        margin: 0 0;
     }
     .steps {
         background-color: @main-back-ground-color;
-        border-radius: 10px;
-        padding: 0 5%;
-        height: 70%;
         color: @main-text-with-background;
         width: 300px;
+        height: 100%;
+        border-bottom: 20px solid @nonbackground-header-color; 
+        margin-bottom: 3%;
         @media @small {
             flex-direction: row;
-            width: 75%;
+            width : 80%;
+            padding: 5% 0;
         }
     }
     .step {
         display: flex;
-        
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
-        height: 30%;
+        height: 27%;
         flex-shrink: 0;
         text-align: center;    
     }
@@ -50,14 +31,12 @@
         text-align: center;
         justify-content: center;
         align-items: center;
-        
         border: 2px solid @main-text-with-background;
         border-radius: 100px;
-        width: 75px;
-        height: 75px;
-        margin-bottom: 3%; 
+        width: 55px;
+        height: 55px;
         ion-icon {
-            font-size: 40px;
+            font-size: 35px;
         }
         @media @small {
             margin-top: 20px;

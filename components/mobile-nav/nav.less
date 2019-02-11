@@ -1,20 +1,25 @@
 .nav {
     overflow: hidden;
+    @media @small {
+        margin-top: 100px;
+    }
     nav{
         max-width: 80%;
         margin: 0 auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        
         height: 100%;
         .links {
-            font-size: 1.8rem;
+            font-size: 2rem;
             width: 30%;
             display: flex;
             justify-content: space-between;
             padding-bottom: 6px;
             padding-left: 6px;
+            @media @medium {
+                width: 40%;
+            }
             a {
                 &:hover {
                     color: darken(@nonbackground-header-color, 10%);
@@ -35,7 +40,7 @@
     }
     background-color: @main-back-ground-color;
     height: 10vh;
-    max-height: 60px;
+    max-height: 80px;
     width: 100%;
     margin: 0 auto;
 }
@@ -51,10 +56,8 @@ header.nav {
             width: 100%;
         }
     }
-
 }
 footer.nav {
-    
     @media @small {
         nav{
             max-width: 100%;
@@ -70,6 +73,7 @@ footer.nav {
         }
     }
 }
+// START OF MOBILE NAV
 .open-nav {
     width: 40px;
     height: 40px;
@@ -77,13 +81,16 @@ footer.nav {
     color: aliceblue;
     position: fixed;
     top : 10px;
-    left: 90%;
+    right: 1%;
     z-index: 1;
     display: none;
     transition: 0.3s;
     &:hover {
         color:@nonbackground-header-color;
         cursor: pointer;
+    }
+    @media @phone {
+        right: 0%;
     }
 }
 .mobile-nav {
@@ -123,7 +130,7 @@ footer.nav {
     .close-nav {
         position: fixed;
         top: 10px;
-        left: 90%;
+        right: 0;
         font-size: 40px;
         transition: 0.3s;
         &:hover {

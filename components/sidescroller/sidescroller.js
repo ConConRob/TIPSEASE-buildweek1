@@ -4,13 +4,11 @@ class SideScroller {
     this.lastWindowHeight = document.documentElement.scrollTop;
     this.element.scrollLeft = 0;
     this.stopScroll = false;
-    // Set the height
     this.scrollNumber = 0;
-
-    // make sure that the sizing is right when window is resized
+    // make sure that the sizing is right when window is resized and on load
     this.setHeight();
     window.addEventListener('resize', () => { this.setHeight(); });
-
+    // on scroll
     document.addEventListener('scroll', () => {
       // check to stop it from calling its self
       if (!this.stopScroll) {
@@ -23,7 +21,6 @@ class SideScroller {
               this.holdYScroll();
               // scroll to the right
               this.element.scrollLeft += 75;
-              // console.log('going down');
             }
           }
         } else if (!this.navAboveWindow()) {
@@ -48,7 +45,7 @@ class SideScroller {
     return document.querySelector('.nav').getBoundingClientRect().top < 0;
   }
 
-  // hold at scroller
+  // hold window in place scroller
   holdYScroll() {
     const pos = document.querySelector('.nav').offsetTop;
     this.lastWindowHeight = pos;
@@ -66,6 +63,7 @@ class SideScroller {
     return false;
   }
 
+  // is the scroll object all the way left or right?
   isScrollLeftorRight() {
     if (this.element.scrollLeft === 0) {
       return "left";
@@ -76,8 +74,9 @@ class SideScroller {
 
   setHeight() {
     const nav = document.querySelector('header.nav');
+    // check if in small screen view or normal screen
     if (window.innerWidth > 992) {
-      this.element.style.height = `${window.innerHeight * 0.9 - nav.offsetHeight}px`;
+      this.element.style.height = `${window.innerHeight - nav.offsetHeight}px`;
     } else {
       // if in mobile state
       this.element.style.height = "";
@@ -85,12 +84,13 @@ class SideScroller {
   }
 }
 
-class ScrollSection {
-  constructor(section) {
-    this.section = section;
-    // this.section.style.width = this.section.dataset.width;
-  }
-}
 // find side scroller and make a new object
 let sideScroller = document.querySelector(".side-scroll");
 sideScroller = new SideScroller(sideScroller);
+
+// stop mouse down scrolling
+window.addEventListener('mousedown', (event) => {
+  if (event.button === 1) {
+    event.preventDefault();
+  }
+});
